@@ -20,7 +20,10 @@ public class Order {
     @JoinColumn(name = "client_id")
     private User client;
 
-    public Order(){
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    private Payment payment;
+
+    public Order() {
     }
 
     public Order(Long id, Instant moment, OrderStatus status, User client) {
