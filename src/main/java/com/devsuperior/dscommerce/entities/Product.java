@@ -87,5 +87,11 @@ public class Product {
         return categories;
     }
 
+    public Set<OrderItem> getItens() {
+        return itens;
+    }
 
+    public List<Order> getOrders() {
+        return itens.stream().map(x -> x.getOrder()).toList();
+    }
 }
